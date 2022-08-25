@@ -8,6 +8,7 @@ var topKFrequent = function (nums, k) {
     let result = [];
     let map = new Map();
 
+    // count element occurency using map
     for (let i = 0; i < nums.length; i++) {
         if (map.has(nums[i])) {
             map.set(nums[i], map.get(nums[i]) + 1);
@@ -20,6 +21,8 @@ var topKFrequent = function (nums, k) {
     for (let [key, value] of map) {
         array.push([key, value]);
     }
+
+    // sort by occurency - descending
     array.sort(function (a, b) {
         return b[1] - a[1];
     })

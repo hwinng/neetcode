@@ -9,10 +9,11 @@ var longestConsecutive = function (nums) {
     for (let num of nums) {
         mySet.add(num);
     }
-    console.log("set", mySet);
 
+    console.log(mySet)
     mySet.forEach(num => {
-        if (!mySet.has(num - 1)) {
+        // assume that 
+        if (mySet.has(num + 1)) {
             console.log("num", num)
             let currentNumber = num;
             let currentStreak = 1;
@@ -22,7 +23,7 @@ var longestConsecutive = function (nums) {
             }
 
             longestStreak = Math.max(longestStreak, currentStreak);
-            console.log("longestStreak", longestStreak)
+            console.log(currentStreak)
         }
     });
 
